@@ -1,14 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import React from 'react';
+import ReactDOM from 'react-dom/client'; // Importación corregida
+import App from './App';
+import ApolloClientProvider from './apollo-client';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container); // Uso de createRoot desde react-dom/client
+
 root.render(
-  <React.StrictMode>
+  <ApolloClientProvider>
     <App />
-  </React.StrictMode>
+  </ApolloClientProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
